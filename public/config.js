@@ -4,5 +4,5 @@
 // NEVER put a service_role or secret key in this file.
 window.STUDY_DESK_CONFIG = {
   url: 'url: 'https://otxcxsfhivefsvybajtp.supabase.co',',
-  publishableKey: 'YOUR_PUBLISHABLE_OR_ANON_KEY'
+  publishableKey: 'sb_publishable_v90cqQlTz_Cd53jXDxrCAw_ZFs3F8NA'
 };
