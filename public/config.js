@@ -3,6 +3,6 @@
 // Use the Project URL and the publishable key (or legacy anon key) from Supabase API settings.
 // NEVER put a service_role or secret key in this file.
 window.STUDY_DESK_CONFIG = {
-  url: 'https://YOUR_PROJECT_REF.supabase.co',
+  url: 'url: 'https://otxcxsfhivefsvybajtp.supabase.co',',
   publishableKey: 'YOUR_PUBLISHABLE_OR_ANON_KEY'
 };
