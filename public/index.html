@@ -76,6 +76,7 @@
         <a class="nav-link active" href="#overview" data-nav="overview"><span class="nav-symbol">⌂</span> Overview</a>
         <a class="nav-link" href="#assignments" data-nav="assignments"><span class="nav-symbol">▤</span> Assignments</a>
         <a class="nav-link" href="#schedule" data-nav="schedule"><span class="nav-symbol">◷</span> Study plan</a>
+        <a class="nav-link" href="#study-guides" data-nav="study-guides"><span class="nav-symbol">▣</span> Study guides</a>
       </nav>
 
       <div class="sidebar-bottom">
@@ -100,7 +101,12 @@
         <p class="topbar-date" id="today-label"></p>
         <div class="topbar-profile"><span class="online-dot"></span><span id="topbar-profile-name">My study space</span></div>
       </header>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <button class="mobile-nav-link active" type="button" data-mobile-nav="overview">Overview</button>
+        <button class="mobile-nav-link" type="button" data-mobile-nav="study-guides">Study guides</button>
+      </nav>
 
+      <div class="workspace-view" id="overview-view">
       <section class="welcome-section" id="overview">
         <div>
           <p class="eyebrow">YOUR OVERVIEW</p>
@@ -190,6 +196,12 @@
             <label for="session-time">Start time</label>
             <input id="session-time" name="time" type="time" value="16:00" required>
           </div>
+          <div class="form-field session-files-field">
+            <label for="session-guides">Study guide files (optional)</label>
+            <input id="session-guides" name="guides" type="file" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.rtf,.png,.jpg,.jpeg">
+            <small>Up to 20 files for this session. Maximum 20 MB per file.</small>
+            <div class="selected-files" id="session-file-list" aria-live="polite">No files selected.</div>
+          </div>
           <button class="button button-primary session-submit" type="submit">Save session</button>
         </form>
 
@@ -197,6 +209,50 @@
       </section>
 
       <footer class="footer"><span>Study Desk</span><span>Your schoolwork, in one place.</span></footer>
+      </div>
+
+      <section class="workspace-view study-guides-view hidden" id="study-guides-view" aria-labelledby="study-guides-title">
+        <div class="view-heading">
+          <div>
+            <p class="eyebrow">YOUR STUDY SPACE</p>
+            <h1 id="study-guides-title">Study guides &amp; schedule</h1>
+            <p class="welcome-copy">See your planned study sessions and keep their files together.</p>
+          </div>
+          <div class="view-heading-actions">
+            <button class="button button-secondary" id="export-calendar" type="button">Download calendar</button>
+            <button class="button button-primary" id="open-session-from-guides" type="button">+ Add study session</button>
+          </div>
+        </div>
+
+        <section class="panel calendar-panel" aria-labelledby="calendar-heading">
+          <div class="panel-heading calendar-heading">
+            <div>
+              <p class="eyebrow">WEEKLY VIEW</p>
+              <h2 id="calendar-heading">Your study schedule</h2>
+              <p class="panel-description" id="calendar-week-label">This week</p>
+            </div>
+            <div class="calendar-controls">
+              <button class="calendar-control" id="calendar-prev" type="button" aria-label="Previous week">←</button>
+              <button class="button button-plain calendar-today" id="calendar-today" type="button">Today</button>
+              <button class="calendar-control" id="calendar-next" type="button" aria-label="Next week">→</button>
+            </div>
+          </div>
+          <div class="week-calendar" id="week-calendar" aria-live="polite"></div>
+          <p class="calendar-note">Use “Add to Google Calendar” for one session, or download the calendar file to import your schedule into Google Calendar, Apple Calendar or Outlook.</p>
+        </section>
+
+        <section class="panel guide-library-panel" aria-labelledby="guide-library-heading">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">YOUR FILES</p>
+              <h2 id="guide-library-heading">Study guide library</h2>
+              <p class="panel-description">Files are grouped under the study session they belong to.</p>
+            </div>
+            <span class="guide-total" id="guide-total">0 files</span>
+          </div>
+          <div class="guide-library" id="guide-library" aria-live="polite"></div>
+        </section>
+      </section>
     </main>
   </div>
 
